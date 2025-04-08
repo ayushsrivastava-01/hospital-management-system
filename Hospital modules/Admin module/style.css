@@ -1,0 +1,254 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    height: 5rem;
+    width: 100%;
+    box-shadow: 0 0 5px black;
+    position: sticky;
+    top: 0;
+}
+
+.head .hos-name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 1;
+    height: 5rem;
+    width: 17vw;
+    background-color: #6269ce;
+    color: white;
+}
+
+.head .hos-name h1 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-left: 0;
+}
+
+.head .menu {
+    margin-right: auto;
+    padding-left: 2rem;
+    cursor: pointer;
+}
+
+.head .menu img {
+    height: 4vh;
+    width: 4vh;
+}
+
+#menu2 {
+    display: none;
+}
+#menu3,#menu4{
+    display: none;
+}
+header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1rem;
+}
+
+ul {
+    display: flex;
+    align-items: center;
+    margin-right: 3rem;
+    gap: 1.5rem;
+}
+
+header img {
+    height: 4vh;
+    width: 4vh;
+    object-fit: cover;
+    object-position: center center;
+}
+
+header .profile-img {
+    height: 8vh;
+    width: 8vh;
+    border-radius: 50%;
+    border: 1px solid black;
+}
+
+.head .navigation .navigation-links .language,
+.profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.1rem;
+}
+
+.full-page {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+}
+
+.side {
+    background-color: #0044cc;
+    color: white;
+    width: 17vw;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border: 1px solid gray;
+}
+
+.full-page .side .admin {
+    width: 100%;
+    height: 30vh;
+    background-color: #fff;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.full-page .side .admin .admin-profile-pic {
+    cursor: pointer;
+    height: 15vh;
+    width: 15vh;
+    object-fit: cover;
+    object-position: center center;
+    border-radius: 10%;
+    transition: .2s;
+    box-shadow: 0 0 0 1px rgb(53, 41, 41);
+}
+
+.full-page .side .admin .admin-profile-pic:hover {
+    box-shadow: 0 0 15px 2px gray;
+    border-radius: 50%;
+}
+
+.side a {
+    text-align: center;
+    width: auto;
+    background-color: #888585;
+    color: white;
+    text-decoration: none;
+    display: block;
+    margin: 0px 2rem;
+    padding: 3vmin 0;
+    font-size: 3vmin;
+}
+
+.side a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    display: flex;
+    flex-grow: 1;
+}
+
+.iframe-container {
+    flex-grow: 1;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+iframe {
+    border: none;
+    width: 100%;
+    height: 100vh;
+}
+
+.hidden-side{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+
+/* Responsive styles */
+@media (max-width: 500px) {
+    .hide-res {
+        display: none;
+    }
+
+    .head {
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .head .hos-name {
+        width: 50vh;
+        justify-content: center;
+        /* font-size: .7rem; */
+        /* padding: 0px; */
+    }
+
+    .head .hos-name h1 {
+        margin: 0;
+        text-align: center;
+    }
+
+    ul {
+        justify-content: flex-end;
+
+    }
+
+    .profile {
+        /* margin: 0; */
+        justify-content: flex-end;
+    }
+
+    .side {
+        display: none;
+        /* width: ; */
+    }
+    iframe{
+        height: 100vh;
+    }
+    .hidden-side{
+        display: none;
+    }
+    #menu,#menu2{
+        display: none;
+    }
+    #menu3{
+        display: block;
+    }
+}
+
+
+@media (max-width: 900px) {
+    .head .hos-name {
+        font-size: .8rem;
+    }
+}
+@media (max-width: 1000px) {
+    .full-page .side a{
+        padding: auto;
+    }
+}
+
+@media (max-width: 1100px) {
+    .head .hos-name {
+        justify-content: center;
+    }
+    iframe{
+        height: 100%;
+        width: 100%;
+    }
+}
+
+@media (max-width: 1300px) {
+    .full-page .side a{
+        font-size: 2vmin;
+        padding: 2vmin 0;
+    }
+}

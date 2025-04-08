@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="head">
+        <div class="hos-name">
+            <h1 class="">Hospital</h1>
+        </div>
+        <div class="menu">
+            <img src="1 Images/menu.png" alt="" id="menu">
+            <img src="1 Images/menu.png" alt="" id="menu2">
+            <img src="1 Images/menu.png" alt="" id="menu3">
+            <img src="1 Images/menu.png" alt="" id="menu4">
+        </div>
+        <header class="navigation">
+            <ul class="navigation-links">
+                <div class="language hide-res">
+                    <img src="1 Images/language.png" alt="" class="hide-res">
+                    <li class="hide-res">English</li>
+                </div>
+                <img src="1 Images/notification.png" alt="" class="hide-res">
+                <img src="1 Images/email.png" alt="" class="hide-res">
+                <div class="profile">
+                    <img src="1 Images/doctor.png" alt="" class="profile-img">
+                    <li class="hide-res">Ajeet</li>
+                </div>
+            </ul>
+        </header>
+    </div>
+
+
+
+
+
+    <div class="hidden-side" id="hidden-sidebar">
+        <a href="Dashboard/dashboard.html" target="dashboardFrame">Dashboard</a>
+        <a href="Doctors/doctors.html" target="dashboardFrame" id="doctors">Doctors</a>
+        <a href="Department/department.html" target="dashboardFrame">Departments</a>
+        <a href="Payments/payment.html" target="dashboardFrame">Payments</a>
+        <a href="Settings/settings.html" target="dashboardFrame">Settings</a>
+        <a href="#" onclick="logOut()">Logout</a>
+    </div>
+
+
+
+    <div class="full-page">
+        <div class="side" id="sidebar">
+            <div class="admin">
+                <img src="1 Images/doctor.png" alt="" class="admin-profile-pic">
+                <h2>Ajeet & Ayush</h2>
+                <p>Administrator</p>
+
+            </div>
+            <a href="Dashboard/dashboard.html" target="dashboardFrame" id="dashboard-admin">Dashboard</a>
+            <a href="Doctors/doctors.html" target="dashboardFrame" id="doctors">Doctors</a>
+            <a href="Department/department.html" target="dashboardFrame" id="department">Departments</a>
+            <a href="Payments/payment.html" target="dashboardFrame" id="payment">Payments</a>
+            <a href="Settings/settings.html" target="dashboardFrame" id="setting">Settings</a>
+            <a href="#" onclick="logOut()">Logout</a>
+        </div>
+
+
+        <div class="container">
+            <div class="iframe-container">
+                <iframe src="Dashboard/dashboard.html" name="dashboardFrame" title="Dashboard" id="i-frame"></iframe>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>

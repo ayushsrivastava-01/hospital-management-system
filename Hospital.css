@@ -1,0 +1,496 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: cursive;
+}
+body{
+    scroll-behavior: smooth;
+}
+
+nav {
+    top: 0;
+    background-color: #0ac480;
+    width: 100%;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    z-index: 1;
+  }
+  nav ul {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  nav li {
+    height: 70px;
+  }
+  nav a {
+    height: 100%;
+    padding: 0 30px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+  }
+  
+  nav a:hover {
+    background-color: #f0f0f0;
+    color: black;
+    border-radius: 5px;
+    transition: 0.5s;
+    transform: scale(1.08);
+  }
+  nav li:first-child {
+    margin-right: auto;
+  }
+  .sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    background-color: #ffffff40;
+    backdrop-filter: blur(10px);
+    box-shadow: -10px 0 10px rgba(255, 255, 255, 0.2);
+    transform: translateX(100%);
+    opacity: 0;
+    transition: transform 0.4s ease, opacity 0.3s ease;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .sidebar.show {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  .sidebar li {
+    width: 100%;
+  }
+  .sidebar a {
+    width: 100%;
+    padding: 15px;
+    text-align: left;
+    display: block;
+    color: #000;
+    text-decoration: none;
+  }
+  .sidebar a:hover {
+    background-color: #fff;
+    color: black;
+    height: 25px;
+  }
+  .menu-button {
+    display: none;
+  }
+
+  .appointment-section{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 5% auto;
+    margin-top: 8%;
+    /* height: 70vh; */
+    width: 90%;
+    gap: 20px;
+  }
+  
+  .card.one{
+    width: 25%;
+    height: 60vh;
+    position: relative;
+    /* margin: 0 1em; */
+    background: url("Images/Doctor.jpg") center;
+    background-size: cover;
+    color: #fff;
+    border-radius: 20px;
+    box-shadow: #000 0px 11px 15px 0px;
+  }
+  .card.two{
+    width: 25%;
+    height: 60vh;
+    position: relative;
+    /* margin: 0 1em; */
+    background: url("Images/Patient.jpg") center;
+    background-size: cover;
+    color: #fff;
+    border-radius: 20px;
+    box-shadow: #000 0px 11px 15px 0px;
+  }
+  .card.three{
+    width: 25%;
+    height: 60vh;
+    position: relative;
+    /* margin: 0 1em; */
+    background: url("Images/Staff.jpg") center;
+    background-size: cover;
+    color: #fff;
+    border-radius: 20px;
+    box-shadow: #000 0px 11px 15px 0px;
+  }
+  .card .overlay{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#4995e7,rgb(122, 17, 122));
+    opacity: 0;
+    transition: 0.3s;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  .card:hover .overlay{
+    opacity: 1;
+  }
+  .card .button{
+    padding: 0.6em 1.3em;
+    text-decoration: none;
+    color: #fff;
+    border: 2px solid #fff;
+    letter-spacing: 1px;
+    border-radius: 10px;
+  }
+  .overlay h1{
+    margin-bottom: 20%;
+  }
+  .card .button:hover{
+    background: rgba(255,255,255,0.3);
+  }
+  .card .button, .card h1{
+    transition: 0.3s;
+    transform: translateY(-20px);
+  }
+  .card:hover .button, .card:hover h1{
+    transform: translateY(0);
+  }
+  
+  .pop-up{
+    position: absolute;
+    top: -150%;
+    left: 50%;
+    opacity: 0;
+    transform: translate(-50%,-50%) scale(1.25);
+    width: 35%;
+    height: 60%;
+    padding: 20px 30px;
+    background: #fff;
+    box-shadow: 0 0 10px blue;
+    border-radius: 10px;
+    background: radial-gradient(rgb(203, 134, 243),white,rgb(158, 219, 239));
+    transition: top 0ms ease-in-out 200ms,
+                opacity 200ms ease-in-out 0ms,
+                transform 200ms ease-in-out 0ms;
+    z-index: 1000;
+  }
+  .pop-up1{
+    position: absolute;
+    top: -150%;
+    left: 50%;
+    opacity: 0;
+    transform: translate(-50%,-50%) scale(1.25);
+    width: 35%;
+    height: 60%;
+    padding: 20px 30px;
+    background: #fff;
+    box-shadow: 0 0 10px blue;
+    border-radius: 10px;
+    background: radial-gradient(rgb(203, 134, 243),white,rgb(158, 219, 239));
+    transition: top 0ms ease-in-out 200ms,
+                opacity 200ms ease-in-out 0ms,
+                transform 200ms ease-in-out 0ms;
+    z-index: 1000;
+  }
+  .pop-up2{
+    position: absolute;
+    top: -150%;
+    left: 50%;
+    opacity: 0;
+    transform: translate(-50%,-50%) scale(1.25);
+    width: 35%;
+    height: 60%;
+    padding: 20px 30px;
+    background: #fff;
+    box-shadow: 0 0 10px blue;
+    border-radius: 10px;
+    background: radial-gradient(rgb(203, 134, 243),white,rgb(158, 219, 239));
+    transition: top 0ms ease-in-out 200ms,
+                opacity 200ms ease-in-out 0ms,
+                transform 200ms ease-in-out 0ms;
+    z-index: 1000;
+  }
+  .pop-up.active{
+    top: 50%;
+    opacity: 1;
+    transform: translate(-50%,-50%) scale(1);
+    transition: top 0ms ease-in-out 0ms,
+                opacity 200ms ease-in-out 0ms,
+                transform 20ms ease-in-out 0ms;
+  }
+  .pop-up1.active{
+    top: 50%;
+    opacity: 1;
+    transform: translate(-50%,-50%) scale(1);
+    transition: top 0ms ease-in-out 0ms,
+                opacity 200ms ease-in-out 0ms,
+                transform 20ms ease-in-out 0ms;
+  }
+  .pop-up2.active{
+    top: 50%;
+    opacity: 1;
+    transform: translate(-50%,-50%) scale(1);
+    transition: top 0ms ease-in-out 0ms,
+                opacity 200ms ease-in-out 0ms,
+                transform 20ms ease-in-out 0ms;
+  }
+  .pop-up .close-btn{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 15px;
+    height: 15px;
+    background: #888;
+    color: #eee;
+    text-align: center;
+    line-height: 15px;
+    border-radius: 15px;
+    cursor: pointer;
+  }
+  .pop-up1 .close-btn{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 15px;
+    height: 15px;
+    background: #888;
+    color: #eee;
+    text-align: center;
+    line-height: 15px;
+    border-radius: 15px;
+    cursor: pointer;
+  }
+  .pop-up2 .close-btn{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 15px;
+    height: 15px;
+    background: #888;
+    color: #eee;
+    text-align: center;
+    line-height: 15px;
+    border-radius: 15px;
+    cursor: pointer;
+  }
+  .pop-up .form h2{
+    text-align: center;
+    color: #222;
+    margin: 10px 0px 20px;
+    font-size: 35px;
+  }
+  .pop-up1 .form h2{
+    text-align: center;
+    color: #222;
+    margin: 10px 0px 20px;
+    font-size: 35px;
+  }
+  .pop-up2 .form h2{
+    text-align: center;
+    color: #222;
+    margin: 10px 0px 20px;
+    font-size: 35px;
+  }
+  .pop-up .form .form-element label{
+    font-family: "Raleway", sans-serif;
+    font-size: 18px;
+    columns: #222;
+    /* margin-top: 15px; */
+  }
+  .pop-up1 .form .form-element label{
+    font-family: "Raleway", sans-serif;
+    font-size: 18px;
+    columns: #222;
+    /* margin-top: 15px; */
+  }
+  .pop-up2 .form .form-element label{
+    font-family: "Raleway", sans-serif;
+    font-size: 18px;
+    columns: #222;
+    /* margin-top: 15px; */
+  }
+  .pop-up .form .form-element #id, #password{
+    font-family: "Raleway", sans-serif;
+    margin-top: 5px;
+    display: block;
+    width: 100%;
+    padding: 25px;
+    outline: none;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    font-size: 20px;
+  }
+  .pop-up1 .form .form-element #name, #status, #department{
+    font-family: "Raleway", sans-serif;
+    margin-top: 5px;
+    display: block;
+    width: 100%;
+    padding: 15px;
+    outline: none;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    font-size: 20px;
+  }
+  .pop-up2 .form .form-element #ename, #query{
+    font-family: "Raleway", sans-serif;
+    margin-top: 5px;
+    display: block;
+    width: 100%;
+    padding: 25px;
+    outline: none;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    font-size: 20px;
+  }
+
+  .pop-up .form .form-element button{
+    font-family: "Raleway", sans-serif;
+    width: 100%;
+    height: 40px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    background: #222;
+    color: #f5f5f5;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: 0.5s;
+  }
+  .pop-up1 .form .form-element button{
+    font-family: "Raleway", sans-serif;
+    width: 100%;
+    height: 40px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    background: #222;
+    color: #f5f5f5;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: 0.5s;
+  }
+  .pop-up2 .form .form-element button{
+    font-family: "Raleway", sans-serif;
+    width: 100%;
+    height: 40px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    background: #222;
+    color: #f5f5f5;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: 0.5s;
+  }
+
+  .pop-up .form .form-element button:hover{
+    background: #05af10;
+  }
+  .pop-up1 .form .form-element button:hover{
+    background: #05af10;
+  }
+  .pop-up2 .form .form-element button:hover{
+    background: #05af10;
+  }
+  
+  .copyright-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 9vh;
+    width: 100%;
+    background-color: #155b41;
+    color: #fff;
+    font-size: 18px;
+    margin-top: 6.65%;
+  }
+  .copyright-section p{
+    text-align: center;
+  }
+
+  /* responsiveness part is here */
+  @media (max-width: 800px) {
+    .hideOnMobile {
+      display: none;
+    }
+    .menu-button {
+      display: block;
+    }
+    .appointment-section{
+        flex-direction: column;
+        align-items: center;
+      }
+      .card.one, .card.two, .card.three{
+        width: 90%;
+        height: 40vh;
+        margin-top: 10%; 
+      } 
+      .pop-up, .pop-up1, .pop-up2 {
+        width: 85%; 
+        height: auto;
+    }
+}
+@media (max-width: 500px) {
+    .hideOnMobile {
+      display: none;
+    }
+    .menu-button {
+      display: block;
+    }
+    .appointment-section{
+        flex-direction: column;
+        align-items: center;
+      }
+      .card.one, .card.two, .card.three{
+        width: 90%;
+        height: 50vh;
+        margin-top: 10%;
+      }
+      .pop-up, .pop-up1, .pop-up2 {
+        width: 95%; 
+        padding: 10px 15px; 
+    }
+
+    .pop-up .form h2, .pop-up1 .form h2, .pop-up2 .form h2 {
+        font-size: 28px; 
+    }
+
+    .pop-up .form .form-element input,
+    .pop-up1 .form .form-element input,
+    .pop-up2 .form .form-element input {
+        font-size: 18px; 
+    }
+
+    .pop-up .form .form-element button,
+    .pop-up1 .form .form-element button,
+    .pop-up2 .form .form-element button {
+        height: 35px; 
+        font-size: 14px;    
+    }
+      .copyright-section{
+        font-size: 13px;
+        height: 8vh;
+        margin-bottom: 0px;
+      }
+}
